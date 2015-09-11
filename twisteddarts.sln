@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwistedDarts", "twisteddarts\TwistedDarts.csproj", "{C823ED08-8B6E-4420-8F69-00A44BFA3B53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "twisteddarts.Tests", "twisteddarts.Tests\twisteddarts.Tests.csproj", "{FEFCB08D-8293-475D-979B-D3F5746C81F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "twistedconsole", "twistedconsole\twistedconsole.csproj", "{54837B21-D177-4944-9BB9-EAB38447511B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C823ED08-8B6E-4420-8F69-00A44BFA3B53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C823ED08-8B6E-4420-8F69-00A44BFA3B53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C823ED08-8B6E-4420-8F69-00A44BFA3B53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C823ED08-8B6E-4420-8F69-00A44BFA3B53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEFCB08D-8293-475D-979B-D3F5746C81F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEFCB08D-8293-475D-979B-D3F5746C81F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEFCB08D-8293-475D-979B-D3F5746C81F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEFCB08D-8293-475D-979B-D3F5746C81F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54837B21-D177-4944-9BB9-EAB38447511B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54837B21-D177-4944-9BB9-EAB38447511B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54837B21-D177-4944-9BB9-EAB38447511B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54837B21-D177-4944-9BB9-EAB38447511B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
