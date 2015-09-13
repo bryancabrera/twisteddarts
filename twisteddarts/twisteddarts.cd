@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TwistedDarts.Models.Person">
+    <Position X="1.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAACEAACAgAAACAAAAAAAEAAQAAQAAAAAAAAgAAAAg=</HashCode>
+      <FileName>Models\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TwistedDarts.Models.Team">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAgAAACQCAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Team.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TwistedDarts.Models.Membership">
+    <Position X="3.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIAAAAAAAQAgAAAgEAACAAACAAIAQAAgEAAAAAAAAAA=</HashCode>
+      <FileName>Models\Membership.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TwistedDarts.Models.AllStarPoint">
+    <Position X="6" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAQAAAAAAAAAAAAACAAAAQAgAAAAgAAAgAAAAAAA=</HashCode>
+      <FileName>Models\AllStarPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TwistedDarts.Models.GameResult">
+    <Position X="8" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIBAQAAAAAAAAAEAAAAAAAgAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Models\GameResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TwistedDarts.Models.Game">
+    <Position X="9.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBAAAgAAAAAAgAAAAAEAAgAAAAAgABAAAAAgAAAhIAA=</HashCode>
+      <FileName>Models\Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="TwistedDarts.Models.Gender">
+    <Position X="1.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Models\Person.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TwistedDarts.Models.Role">
+    <Position X="3.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAgAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Models\Membership.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TwistedDarts.Models.AllStarPointName">
+    <Position X="7.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAgABAAAAAAAAAAAAAAAAAAABQAAA=</HashCode>
+      <FileName>Models\AllStarPoint.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TwistedDarts.Models.GameName" Collapsed="true">
+    <Position X="9.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAIAAAAAA=</HashCode>
+      <FileName>Models\Game.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TwistedDarts.Models.GameFormat" Collapsed="true">
+    <Position X="9.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQABAAAA=</HashCode>
+      <FileName>Models\Game.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

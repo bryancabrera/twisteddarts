@@ -15,15 +15,15 @@ namespace TwistedDarts.Models
         public GameName GameName { get; set; }
         public GameFormat GameFormat { get; set; }
         public int MatchID { get; set; }
-        public ICollection<Person> Players { get; set; }
-        //public int HomeTeamID { get; set; }
-        //public int AwayTeamID { get; set; }
+        public ICollection<Membership> Players { get; set; }
+        public int HomeTeamID { get; set; }
+        public int AwayTeamID { get; set; }
         public Int16 PointValue {
             get {
                 return (short)GameFormat;
                 }
         }
-        public bool IsForfeit { get; set; }
+    
         public Int16 GameSequence { get; set; }
 
         public virtual Match Match { get; set; }

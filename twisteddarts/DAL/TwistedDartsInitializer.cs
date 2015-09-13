@@ -32,7 +32,7 @@ namespace TwistedDarts.DAL
             establishments.ForEach(e => context.Establishments.Add(e));
             context.SaveChanges();
 
-            var persons = new List<Person>
+            var people = new List<Person>
             {
                 new Person {FirstName="Bryan", LastName="Cabrera", Gender=Gender.Male, RegistrationDate=DateTime.Now, EmailAddress="bryan@twisteddarts.com"},
                 new Person {FirstName="TJ", LastName="Berger", Gender=Gender.Male, RegistrationDate=DateTime.Now, EmailAddress="tj@twisteddarts.com" },
@@ -40,16 +40,18 @@ namespace TwistedDarts.DAL
                 new Person {FirstName="Carl", LastName="Bernardis", Gender=Gender.Male, RegistrationDate=DateTime.Now, EmailAddress="carl@twisteddarts.com" },
                 new Person {FirstName="Michael", LastName="Scandale", Gender=Gender.Male, RegistrationDate=DateTime.Now, EmailAddress="migues@twisteddarts.com" },
              };
-            persons.ForEach(p => context.Persons.Add(p));
+            people.ForEach(p => context.People.Add(p));
             context.SaveChanges();
 
             var teams = new List<Team>
             {
-                new Team {Name="Twisted Tavern Dart Team", JoinDate=DateTime.Now, PlayDay=DayOfWeek.Wednesday },
+                new Team {Name="Twisted Tavern Dart Team", JoinDate=DateTime.Now, PlayDay=DayOfWeek.Wednesday, },
                 new Team {Name="Barracks", JoinDate=DateTime.Now, PlayDay=DayOfWeek.Wednesday },
                 new Team {Name="Watsons", JoinDate=DateTime.Now, PlayDay=DayOfWeek.Wednesday },
                 new Team {Name="Gator Blue", JoinDate=DateTime.Now, PlayDay=DayOfWeek.Wednesday },
             };
+            teams.ForEach(t => context.Teams.Add(t));
+            context.SaveChanges();
         }
 
     }

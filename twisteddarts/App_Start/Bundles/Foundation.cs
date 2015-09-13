@@ -1,6 +1,6 @@
 using System.Web.Optimization;
 
-namespace twisteddarts
+namespace TwistedDarts
 {
     public static class Foundation
     {

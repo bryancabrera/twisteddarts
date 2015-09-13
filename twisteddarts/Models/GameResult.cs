@@ -10,5 +10,10 @@ namespace TwistedDarts.Models
         public int GameResultID { get; set; }
         public int GameID { get; set; }
         public int WinningTeamID { get; set; }
+        public short PointsEarned { get; set; }
+        public bool IsForfeit { get; set; }
+
+        public virtual Game Game { get; set; }
+
     }
 }
