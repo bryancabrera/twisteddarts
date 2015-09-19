@@ -8,6 +8,6 @@ namespace TwistedDarts.Models
     public class EstablishmentMembership : Membership
 
     {
-
+        
     }
 }

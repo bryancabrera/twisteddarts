@@ -47,7 +47,7 @@ namespace TwistedDarts.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PersonID,FirstName,LastName,MiddleInitial,RegistrationDate,MobileNumber,AltNumber,EmailAddress,Gender,DOB")] Person person)
+        public ActionResult Create([Bind(Include = "PersonID,FirstName,LastName,MiddleInitial,RegistrationDate,ContactNumber,AltNumber,EmailAddress,Gender,DOB")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace TwistedDarts.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PersonID,FirstName,LastName,MiddleInitial,RegistrationDate,MobileNumber,AltNumber,EmailAddress,Gender,DOB")] Person person)
+        public ActionResult Edit([Bind(Include = "PersonID,FirstName,LastName,MiddleInitial,RegistrationDate,ContactNumber,AltNumber,EmailAddress,Gender,DOB")] Person person)
         {
             if (ModelState.IsValid)
             {

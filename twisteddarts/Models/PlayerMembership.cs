@@ -11,9 +11,9 @@ namespace TwistedDarts.Models
     public class PlayerMembership : Membership
     {
         [ForeignKey("Player")]
-        public int PlayerID { get; set; }
-
+        public int PlayerID { get; set; }  
         public Role Role { get; set; }
+
         public virtual Person Player { get; set; }
         public virtual ICollection<AllStarPoint> AllStarPoints { get; set; }
     }

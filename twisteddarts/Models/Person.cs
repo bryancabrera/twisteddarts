@@ -30,5 +30,12 @@ namespace TwistedDarts.Models
         public virtual ICollection<Team> Teams { get; set; }
         public virtual ICollection<AllStarPoint> AllStarPoints { get; set; }
 
+        //internal Person() { }
+        //public Person(string firstName, string lastName)
+        //{
+        //    this.FirstName = firstName;
+        //    this.LastName = lastName;
+        //}
+
     }
 }

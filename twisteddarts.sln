@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwistedDarts", "twisteddarts\TwistedDarts.csproj", "{C823ED08-8B6E-4420-8F69-00A44BFA3B53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "twisteddarts.Tests", "twisteddarts.Tests\twisteddarts.Tests.csproj", "{FEFCB08D-8293-475D-979B-D3F5746C81F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwistedDarts.Tests", "twisteddarts.Tests\TwistedDarts.Tests.csproj", "{FEFCB08D-8293-475D-979B-D3F5746C81F8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "twistedconsole", "twistedconsole\twistedconsole.csproj", "{54837B21-D177-4944-9BB9-EAB38447511B}"
 EndProject
