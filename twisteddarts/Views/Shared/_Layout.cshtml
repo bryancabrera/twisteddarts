@@ -6,7 +6,7 @@
     @*Set the viewport width to device width for mobile *@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>@ViewBag.Title - Welcome to Foundation</title>
+    <title>@ViewBag.Title - Welcome to Twisted Darts</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     @Styles.Render("~/Content/css")
@@ -15,8 +15,16 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    @RenderBody()
+    <div class="row">
+        <div class="large-12 columns">
+            <h1>Welcome to Twisted Darts</h1>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="large-12 columns">@RenderBody()</div>
+       
+    </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/foundation")
     <script>

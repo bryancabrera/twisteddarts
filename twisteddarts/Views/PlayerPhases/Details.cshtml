@@ -1,0 +1,90 @@
+﻿@model TwistedDarts.Models.PlayerPhase
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>PlayerPhase</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Person.FirstName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Person.FirstName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Season.SeasonName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Season.SeasonName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Team.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Team.Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Role)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Role)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SkillLevel)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SkillLevel)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.StartDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.EndDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SeasonID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SeasonID)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.PlayerPhaseID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

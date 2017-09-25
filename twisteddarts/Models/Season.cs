@@ -12,9 +12,10 @@ namespace TwistedDarts.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
-        public ICollection<DateTime> BlackoutDays { get; set; }
-
-
+        //public virtual PlayerPhase Roster { get; set; }
+        // public ICollection<DateTime> BlackoutDays { get; set; }
+        // public IList<Schedule> Schedules { get; set; }
+        //public virtual List<Team> Team { get; set; }
 
     }
 }

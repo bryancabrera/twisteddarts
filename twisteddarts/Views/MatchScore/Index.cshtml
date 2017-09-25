@@ -1,0 +1,26 @@
+﻿@model TwistedDarts.ViewModels.MatchViewModel
+@{
+    ViewBag.Title = "MatchScore";
+}
+
+<h2>MatchScore</h2>
+<div class="row large-12 columns">
+    <ul>
+        
+
+        @foreach (var item in Model.Match.MatchSets)
+        {
+            <li>@item.SetSequence 
+        <ul>
+            @foreach (var g in item.Games)
+            {
+                <li>@g.GameName.ToDisplayName() @g.GameFormat</li>
+            }
+        </ul>
+        
+        
+        </li> 
+          
+        }
+    </ul>
+</div>

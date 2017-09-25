@@ -18,6 +18,7 @@ namespace TwistedDarts.Controllers
         // GET: People
         public ActionResult Index()
         {
+            var addresses = db.People.Include(a => a.Addresses);
             return View(db.People.ToList());
         }
 
@@ -47,14 +48,16 @@ namespace TwistedDarts.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PersonID,FirstName,LastName,MiddleInitial,RegistrationDate,ContactNumber,AltNumber,EmailAddress,Gender,DOB")] Person person)
+        public ActionResult Create([Bind(Include = "PersonID,FirstName,LastName,MiddleInitial,RegistrationDate,ContactNumber,AltNumber,EmailAddress,Gender,DOB,SeasonID")] Person person)
         {
+
             if (ModelState.IsValid)
             {
                 db.People.Add(person);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
 
             return View(person);
         }

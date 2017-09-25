@@ -9,6 +9,13 @@ namespace TwistedDarts.Models
     {
         public int MatchSetID { get; set; }
         public Int16 SetSequence { get; set; }
-        public ICollection<Game> Games { get; set; }
+        public short HomeTeamTotal { get; set; }
+        public short AwayTeamTotal { get; set; }
+
+        public virtual IList<Game> Games { get; set; }
+
+        public int MatchID { get; set; }
+        public virtual Match Match{ get; set; }
+
     }
 }

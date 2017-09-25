@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 namespace TwistedDarts.Models
@@ -14,5 +15,7 @@ namespace TwistedDarts.Models
         public string PostalCode { get; set; }
         public string County { get; set; }
         public string Description { get; set; }
+        //[ForeignKey("PersonID")]
+        public virtual IList<Person> People { get; set; }
     }
 }

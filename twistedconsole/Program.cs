@@ -17,6 +17,7 @@ namespace twistedconsole
             p.FirstName = "Bryan";
             p.LastName = "Cabrera";
             p.PersonID = 1;
+            Console.Write($"{p.FirstName} {p.LastName}");
 
             var Twisted = new List<Person>
             {
