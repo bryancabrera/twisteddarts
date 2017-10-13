@@ -13,10 +13,11 @@ namespace TwistedDarts.Models
     {
         public int MatchID { get; set; }
         public string MatchName { get; set; }
-        [Display(Name ="Scheduled Date")]
+
+        public int ScheduleDateID { get; set; }
+        [Display(Name = "Scheduled Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public int ScheduleDateID { get; set; }
         public virtual ScheduleDate ScheduledDate { get; set; }
         public MatchType Type { get; set; }
         [Display(Name = "Rescheduled Date")]

@@ -39,8 +39,10 @@ namespace TwistedDarts.Models
         public int SeasonID { get; set; }
         public virtual Season Season { get; set; }
 
-        public virtual IList<AllStarPoint> AllStarPoints { get; set; }
+        public virtual ICollection<AllStarPoint> AllStarPoints { get; set; }
 
+        public String PlayerName => this.Person.FullName;
+               
         //public virtual List<GameResult>GameResults { get; set; }
 
     }

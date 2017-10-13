@@ -54,8 +54,8 @@ namespace twistedconsole
         };
             var teams = new List<Team>
             {
-                new Team {Name="Twisted Tavern",TeamID=1, Players=Twisted, },
-                new Team {Name="Barracks", TeamID=2, }
+                new Team {TeamName="Twisted Tavern",TeamID=1, Players=Twisted, },
+                new Team {TeamName="Barracks", TeamID=2, }
 
             };
             p.AllStarPoints = allstarpoints;
@@ -63,7 +63,7 @@ namespace twistedconsole
 
             foreach(Team team in teams)
             {
-                Console.WriteLine(team.Name);
+                Console.WriteLine(team.TeamName);
                 if (team.Players != null) { 
                 foreach(Person player in team.Players) {
                     Console.WriteLine(player.FirstName + " " + player.LastName);

@@ -1,0 +1,33 @@
+﻿@model TwistedDarts.ViewModels.JoinTeamViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@using (Html.BeginForm("Index", "JoinTeam", FormMethod.Post))
+{
+  
+    @Html.AntiForgeryToken() 
+    <div class="row">
+        <div class="large-12 columns">
+               <h2>@Model.Team.TeamName -- @Model.SeasonName</h2>
+
+            @Html.LabelFor(model => model.People, null, htmlAttributes: new { @class = "form-control" })
+            @Html.DropDownList("PersonID",null, "--Select a Player--", htmlAttributes: new { @class = "form-control" })
+
+            @*@Html.DropDownListFor(model => model.PersonID, new SelectList(Model.People, "PersonID", "FullName"), "---Select A Player--", htmlAttributes: new { @class = "form-control" })*@
+            @Html.HiddenFor(model => model.Team.TeamID)
+            @Html.HiddenFor(model => model.SeasonID)
+            <input type="submit" value="Submit" />
+            <ul>
+                @foreach(var player in Model.Players)
+                {
+                <li>@player.PlayerName @player.Role</li>
+                }
+            </ul>
+        </div>
+    </div>
+
+}
+

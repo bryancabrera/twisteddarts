@@ -36,7 +36,9 @@ namespace TwistedDarts.Models
         public DateTime? DOB { get; set; }
         //public int AddressID { get; set; }
         public bool IsApproved { get; set; } = false;
+
         public virtual IList<Address> Addresses { get; set; }
+       
 
         //public virtual ICollection<Team> Teams { get; set; }
         //public virtual ICollection<AllStarPoint> AllStarPoints { get; set; }
@@ -48,6 +50,19 @@ namespace TwistedDarts.Models
         //    this.LastName = lastName;
         //}
         [DisplayName("Name")]
-        public string FullName => $"{this.FirstName} {this.LastName}";
+        public string FullName
+        {
+            get
+            {
+                if (String.IsNullOrWhiteSpace(MiddleInitial))
+                {
+                    return $"{FirstName} {LastName}";
+                }
+                else
+                {
+                    return $"{FirstName} {MiddleInitial} {LastName}";
+                }
+            }
+        }
     }
 }

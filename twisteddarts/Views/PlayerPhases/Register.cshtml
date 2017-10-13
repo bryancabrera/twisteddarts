@@ -1,0 +1,35 @@
+﻿@model  TwistedDarts.ViewModels.PlayerRegistrationViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+<div class="row">
+    <div class="large-12 columns">
+        <ul>
+            <li>Register a New Team</li>
+            <li>Edit an Existing Team</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="large-12 columns">
+        @using (Html.BeginForm("Register", "PlayerPhases", FormMethod.Post))
+        {
+
+            @Html.LabelFor(model => model.TeamName, null, htmlAttributes: new { @class="form-control"})
+            @Html.DropDownList("TeamID", null,"--Select A Team--", htmlAttributes: new { @class = "form-control" })
+            @Html.LabelFor(model => model.FirstName, null, htmlAttributes: new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control" })
+            @Html.LabelFor(model => model.LastName, null, htmlAttributes: new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.LastName, new { @class = "form-control" })
+            @Html.LabelFor(model => model.EmailAddress, null, htmlAttributes: new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.EmailAddress, new { @class = "form-control" })
+
+            <input type="submit" value="Submit" />
+
+        }
+    </div>
+</div>
+

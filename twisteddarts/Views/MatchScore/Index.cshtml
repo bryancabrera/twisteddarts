@@ -4,23 +4,99 @@
 }
 
 <h2>MatchScore</h2>
-<div class="row large-12 columns">
-    <ul>
-        
 
-        @foreach (var item in Model.Match.MatchSets)
+@foreach (var item in Model.Match.MatchSets)
+{<div class="row panel">
+
+        @foreach (var g in item.Games)
         {
-            <li>@item.SetSequence 
+        <div class="large-4 columns">
+            @Html.DropDownList("HomeTeamID", null, htmlAttributes: new { @class = "form-control" })
+            @if (g.GameFormat == TwistedDarts.Models.GameFormat.Doubles)
+                {
+                @Html.DropDownList("HomeTeamID", null, htmlAttributes: new { @class = "form-control" })
+            }
+        </div>
+
+        <div class="large-4 columns text-center">@g.GameName.ToDisplayName() @g.GameFormat</div>
+        <div class="large-4 columns">
+            @Html.DropDownList("AwayTeamID", null, htmlAttributes: new { @class = "form-control" })
+            @if (g.GameFormat == TwistedDarts.Models.GameFormat.Doubles)
+                {
+                @Html.DropDownList("AwayTeamID", null, htmlAttributes: new { @class = "form-control" })
+            }
+
+        </div>
+        }
+
+    </div>
+}
+
+
+
+
+
+
+
+
+<div class="row">
+    <div class="large-12 columns">
         <ul>
-            @foreach (var g in item.Games)
+            @foreach (var item in Model.Match.MatchSets)
             {
-                <li>@g.GameName.ToDisplayName() @g.GameFormat</li>
+                <li>
+                    @item.SetSequence
+                    <ul>
+                        @foreach (var g in item.Games)
+                {
+                            <li>
+                                @g.GameName.ToDisplayName() @g.GameFormat
+                                <ul>
+                                    @foreach (var p in g.PlayerResults)
+                                    {
+                                        <li>@p.PlayerPhase.Person.FullName</li>
+                                        <li>@p.Result.ToDisplayName()</li>
+                                        <li>@p.PlayerPhase.Team.TeamName</li>
+
+                                    }
+                                </ul>
+
+                            </li>
+
+                        }
+                    </ul>
+
+
+                </li>
+
             }
         </ul>
-        
-        
-        </li> 
-          
-        }
-    </ul>
+
+    </div>
+</div>
+<div class="row">
+    <div class="large-6 columns">
+        <h2>@Model.Match.HomeTeam.TeamName</h2>
+        <ul>
+
+            @foreach (var hp in Model.Match.HomeTeam.PlayerPhase)
+            {
+                <li>@hp.Person.FullName</li>
+            }
+        </ul>
+
+    </div>
+    <div class="large-6 columns">
+        <h2>
+            @Model.Match.AwayTeam.TeamName
+        </h2>
+        <ul>
+
+            @foreach (var hp in Model.Match.AwayTeam.PlayerPhase)
+            {
+                <li>@hp.Person.FullName</li>
+            }
+        </ul>
+    </div>
+
 </div>

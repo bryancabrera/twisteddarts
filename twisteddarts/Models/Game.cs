@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TwistedDarts.Models
 {
@@ -32,7 +34,7 @@ namespace TwistedDarts.Models
         public int GameID { get; set; }
         public GameName GameName { get; set; }
         public GameFormat GameFormat { get; set; }
-        //public ICollection<PlayerPhase> Players { get; set; }
+        
         public Int16 PointValue
         {
             get
@@ -45,6 +47,14 @@ namespace TwistedDarts.Models
 
         public int MatchSetID { get; set; }
         public virtual MatchSet MatchSet { get; set; }
+        public int? WinningTeamID { get; set; }
+        [ForeignKey("WinningTeamID")]
+        public Team WinningTeam { get; set; }
+        public virtual ICollection<PlayerResult> PlayerResults { get; set; }
+        //[ForeignKey("PlayerPhase")]
+        //public virtual ICollection<PlayerPhase> HomePlayers { get; set; }
 
+        //[ForeignKey("PlayerPhase")]
+        //public virtual ICollection<PlayerPhase> AwayPlayers { get; set; }
     }
 }

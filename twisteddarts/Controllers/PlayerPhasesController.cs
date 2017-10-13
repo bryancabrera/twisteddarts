@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using TwistedDarts.DAL;
 using TwistedDarts.Models;
+using TwistedDarts.ViewModels;
 
 namespace TwistedDarts.Controllers
 {
@@ -19,6 +20,7 @@ namespace TwistedDarts.Controllers
         // GET: PlayerPhases
         public ActionResult Index()
         {
+
             var playerPhase = db.PlayerPhase.Include(p => p.Person).Include(p => p.Season).Include(p => p.Team);
             return View(playerPhase.ToList());
         }
@@ -43,7 +45,7 @@ namespace TwistedDarts.Controllers
         {
             ViewBag.PersonID = new SelectList(db.People, "PersonID", "FirstName");
             ViewBag.PlayerPhaseID = new SelectList(db.Seasons, "SeasonID", "SeasonName");
-            ViewBag.TeamID = new SelectList(db.Teams, "TeamID", "Name");
+            ViewBag.TeamID = new SelectList(db.Teams, "TeamID", "TeamName");
             PopulateSeasonDropDownList();
             return View();
         }
@@ -55,26 +57,27 @@ namespace TwistedDarts.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "PlayerPhaseID,Role,SkillLevel,StartDate,EndDate,TeamID,PersonID,SeasonID")] PlayerPhase playerPhase)
         {
-            try { 
-            if (ModelState.IsValid)
+            try
             {
-                db.PlayerPhase.Add(playerPhase);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.PlayerPhase.Add(playerPhase);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
-}
-            catch(RetryLimitExceededException /*dex*/)
+            catch (RetryLimitExceededException /*dex*/)
             {
                 //Log error with dex
                 ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
             }
             ViewBag.PersonID = new SelectList(db.People, "PersonID", "FirstName", playerPhase.PersonID);
             ViewBag.PlayerPhaseID = new SelectList(db.Seasons, "SeasonID", "SeasonName", playerPhase.PlayerPhaseID);
-            ViewBag.TeamID = new SelectList(db.Teams, "TeamID", "Name", playerPhase.TeamID);
+            ViewBag.TeamID = new SelectList(db.Teams, "TeamID", "TeamName", playerPhase.TeamID);
             PopulateSeasonDropDownList(playerPhase.SeasonID);
             return View(playerPhase);
         }
-            
+
 
         // GET: PlayerPhases/Edit/5
         public ActionResult Edit(int? id)
@@ -92,8 +95,8 @@ namespace TwistedDarts.Controllers
             PopulatePlayerDropDownList(playerPhase.PersonID);
             //ViewBag.PersonID = new SelectList(db.People, "PersonID", "FirstName", playerPhase.PersonID);
             //ViewBag.PlayerPhaseID = new SelectList(db.Seasons, "SeasonID", "SeasonName", playerPhase.PlayerPhaseID);
-            ViewBag.TeamID = new SelectList(db.Teams, "TeamID", "Name", playerPhase.TeamID);
-            
+            ViewBag.TeamID = new SelectList(db.Teams, "TeamID", "TeamName", playerPhase.TeamID);
+
             return View(playerPhase);
         }
 
@@ -115,7 +118,7 @@ namespace TwistedDarts.Controllers
             //ViewBag.PlayerPhaseID = new SelectList(db.Seasons, "SeasonID", "SeasonName", playerPhase.PlayerPhaseID);
             PopulatePlayerDropDownList(playerPhase.PersonID);
             PopulateSeasonDropDownList(playerPhase.SeasonID);
-            ViewBag.TeamID = new SelectList(db.Teams, "TeamID", "Name", playerPhase.TeamID);
+            ViewBag.TeamID = new SelectList(db.Teams, "TeamID", "TeamName", playerPhase.TeamID);
             return View(playerPhase);
         }
 
@@ -157,6 +160,8 @@ namespace TwistedDarts.Controllers
             var PlayerQuery = from p in db.People
                               orderby p.FirstName
                               select p;
+
+            //Change to Full Name property
             ViewBag.PersonID = new SelectList((from p in PlayerQuery.ToList()
                                                select new
                                                {
@@ -165,6 +170,38 @@ namespace TwistedDarts.Controllers
                                                }), "PersonID", "Name");
 
 
+        }
+        public ActionResult Register()
+        {
+            ViewBag.TeamID = PopulateTeam();
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Register(PlayerRegistrationViewModel model)
+        {
+            ViewBag.TeamID = PopulateTeam(model.TeamID);
+
+            Person player = new Person();
+            player.FirstName = model.FirstName;
+            player.LastName = model.LastName;
+            player.EmailAddress = model.EmailAddress;
+            player.RegistrationDate = DateTime.Now;
+            player.IsApproved = false;
+            var playerQuery = db.People.FirstOrDefault(fn => fn.FirstName == player.FirstName && fn.LastName == player.LastName);
+            if (playerQuery == null)
+            {
+                db.People.Add(player);
+                db.SaveChanges();
+
+
+                PlayerPhase playerPhase =
+                        new PlayerPhase { PersonID = player.PersonID, Role = Role.Player, SeasonID = 1, TeamID = model.TeamID };
+
+                db.PlayerPhase.Add(playerPhase);
+                db.SaveChanges();
+            }
+            return View();
         }
 
         protected override void Dispose(bool disposing)
@@ -175,5 +212,13 @@ namespace TwistedDarts.Controllers
             }
             base.Dispose(disposing);
         }
+        private SelectList PopulateTeam(object selectedTeam = null)
+        {
+            var TeamQuery = db.Teams.OrderBy(t => t.TeamName);
+
+            return new SelectList(TeamQuery, nameof(Team.TeamID), nameof(Team.TeamName), selectedTeam);
+
+        }
     }
+
 }

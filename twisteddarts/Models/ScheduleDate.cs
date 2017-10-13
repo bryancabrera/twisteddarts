@@ -10,7 +10,10 @@ namespace TwistedDarts.Models
     {
         public int ScheduleDateID { get; set; }
         public DateTime GameDate { get; set; }
+        public short Sequence { get; set; }
+
         public int ScheduleID { get; set; }
         public virtual Schedule Schedule { get; set; }
+
     }
 }

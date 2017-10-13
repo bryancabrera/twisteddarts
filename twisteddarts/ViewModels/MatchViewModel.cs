@@ -16,5 +16,9 @@ namespace TwistedDarts.ViewModels
         public Match Match { get; set; }
         public string MatchName { get; set; }
         public virtual IList<MatchSet> MatchSets { get; set; }
+        public int HomeTeamID { get; set; }
+        public virtual Team HomeTeam { get; set; }
+        public int AwayTeamID { get; set; }
+        public virtual Team AwayTeam { get; set; }
     }
 }

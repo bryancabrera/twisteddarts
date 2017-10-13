@@ -169,6 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JoinTeamController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MatchScoreController.cs" />
     <Compile Include="Controllers\PeopleController.cs" />
@@ -179,29 +180,44 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710081943328_InitialCreate.cs" />
+    <Compile Include="Migrations\201710081943328_InitialCreate.Designer.cs">
+      <DependentUpon>201710081943328_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710130123433_PersonID to Login.cs" />
+    <Compile Include="Migrations\201710130123433_PersonID to Login.Designer.cs">
+      <DependentUpon>201710130123433_PersonID to Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\AllStarPoint.cs" />
     <Compile Include="Models\Conference.cs" />
     <Compile Include="Models\EnumHelper.cs" />
     <Compile Include="Models\Establishment.cs" />
-    <Compile Include="Models\ForeignAttribute.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\GameResult.cs" />
+    <Compile Include="Models\GameSubmissionResult.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Match.cs" />
     <Compile Include="Models\MatchSet.cs" />
+    <Compile Include="Models\MatchUp.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\PlayerPhase.cs" />
+    <Compile Include="Models\PlayerResult.cs" />
+    <Compile Include="Models\EventResult.cs" />
     <Compile Include="Models\Schedule.cs" />
     <Compile Include="Models\ScheduleDate.cs" />
     <Compile Include="Models\Season.cs" />
+    <Compile Include="Models\SetResult.cs" />
     <Compile Include="Models\Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\JoinTeamViewModel.cs" />
     <Compile Include="ViewModels\MatchSetViewModel.cs" />
     <Compile Include="ViewModels\MatchViewModel.cs" />
+    <Compile Include="ViewModels\PlayerRegistrationViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\foundation\foundation.css" />
@@ -394,6 +410,8 @@
     <Content Include="Views\PlayerPhases\Edit.cshtml" />
     <Content Include="Views\PlayerPhases\Index.cshtml" />
     <Content Include="Views\MatchScore\Index.cshtml" />
+    <Content Include="Views\PlayerPhases\Register.cshtml" />
+    <Content Include="Views\JoinTeam\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -404,6 +422,14 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201710081943328_InitialCreate.resx">
+      <DependentUpon>201710081943328_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710130123433_PersonID to Login.resx">
+      <DependentUpon>201710130123433_PersonID to Login.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
