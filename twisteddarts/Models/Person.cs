@@ -38,7 +38,7 @@ namespace TwistedDarts.Models
         public bool IsApproved { get; set; } = false;
 
         public virtual IList<Address> Addresses { get; set; }
-       
+        public string UserEmail { get; set; }
 
         //public virtual ICollection<Team> Teams { get; set; }
         //public virtual ICollection<AllStarPoint> AllStarPoints { get; set; }

@@ -180,13 +180,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710081943328_InitialCreate.cs" />
-    <Compile Include="Migrations\201710081943328_InitialCreate.Designer.cs">
-      <DependentUpon>201710081943328_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201710140214506_Initial.cs" />
+    <Compile Include="Migrations\201710140214506_Initial.Designer.cs">
+      <DependentUpon>201710140214506_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710130123433_PersonID to Login.cs" />
-    <Compile Include="Migrations\201710130123433_PersonID to Login.Designer.cs">
-      <DependentUpon>201710130123433_PersonID to Login.cs</DependentUpon>
+    <Compile Include="Migrations\201710140252221_Add User Email to People.cs" />
+    <Compile Include="Migrations\201710140252221_Add User Email to People.Designer.cs">
+      <DependentUpon>201710140252221_Add User Email to People.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -424,11 +424,11 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710081943328_InitialCreate.resx">
-      <DependentUpon>201710081943328_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710140214506_Initial.resx">
+      <DependentUpon>201710140214506_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710130123433_PersonID to Login.resx">
-      <DependentUpon>201710130123433_PersonID to Login.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710140252221_Add User Email to People.resx">
+      <DependentUpon>201710140252221_Add User Email to People.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

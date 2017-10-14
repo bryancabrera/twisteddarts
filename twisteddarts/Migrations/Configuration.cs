@@ -5,15 +5,14 @@ namespace TwistedDarts.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<TwistedDarts.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<TwistedDarts.DAL.TwistedDartsContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "TwistedDarts.Models.ApplicationDbContext";
         }
 
-        protected override void Seed(TwistedDarts.Models.ApplicationDbContext context)
+        protected override void Seed(TwistedDarts.DAL.TwistedDartsContext context)
         {
             //  This method will be called after migrating to the latest version.
 

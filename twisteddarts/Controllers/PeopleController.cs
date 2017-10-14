@@ -82,10 +82,11 @@ namespace TwistedDarts.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PersonID,FirstName,LastName,MiddleInitial,RegistrationDate,ContactNumber,AltNumber,EmailAddress,Gender,DOB")] Person person)
+        public ActionResult Edit([Bind(Include = "PersonID,FirstName,LastName,MiddleInitial,RegistrationDate,ContactNumber,AltNumber,EmailAddress,Gender,DOB,UserEmail")] Person person)
         {
             if (ModelState.IsValid)
             {
+                
                 db.Entry(person).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
